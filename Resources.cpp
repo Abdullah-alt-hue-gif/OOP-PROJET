@@ -59,17 +59,17 @@ void Resources::gatherWood(int amount) {
     if (wood > 500) wood = 500; 
 }
 
-void Resources::spolFood() {
+void Resources::spoilFood() {
     food -= static_cast<int>(food * 0.05); 
     if (food < 0) food = 0;
 }
 
 
 void Resources::displayResources() const {
-    cout << "\n     Resources" << endl;
-    cout << "Food: " << food << " units\n";
-    cout << "Wood: " << wood << " logs\n";
-    cout << "Stone: " << stone << " blocks\n";
-    cout << "Iron: " << iron << " ingots\n";
+    cout << endl<<"     Resources" << endl;
+    cout << "Food: " << food << " units"<<endl;
+    cout << "Wood: " << wood << " logs"<<endl;
+    cout << "Stone: " << stone << " blocks"<<endl;
+    cout << "Iron: " << iron << " ingots"<<endl;
 }
 

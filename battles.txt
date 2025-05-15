@@ -1,0 +1,3 @@
+
+Attacker:18|Defender:16|Outcome:STALEMATE
+Attacker:189|Defender:16|Outcome:ATTACKER_WINS

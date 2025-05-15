@@ -13,7 +13,7 @@ Population::Population(int t)
 
 
 
-void Population::updatePop(const Resources& res) {
+void Population::updatePopulation(const Resources& res) {
     int foodSupply = res.getFood(); 
     if (foodSupply < total) {
         ill = (total - foodSupply) / 10;
@@ -39,7 +39,7 @@ bool Population::isStable()
 	return ill < total / 10 && deaths < total / 25;
 }
 
-void Population::displayPop() const
+void Population::displayPopulation() const
 {
 	cout <<      "Total Population " << total << endl;
 	cout << "Births: " << births << ", Ill: " << ill << ", Deaths: " << deaths << endl;

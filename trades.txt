@@ -1,0 +1,3 @@
+Player1|Player2|Wood|12|Food|32|ACCEPTED
+Player1|Player2|Wood|12|Food|43|PENDING
+Player1|Player2|Wood|30|Food|20|PENDING

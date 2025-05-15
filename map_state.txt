@@ -1,0 +1,10 @@
+P 0 R -1 R -1 P -1 F -1 P -1 M -1 P -1 M -1 P -1 
+M -1 M -1 F -1 F -1 P -1 M -1 M -1 M -1 M -1 F -1 
+P -1 P -1 M -1 F -1 R -1 R -1 R -1 P -1 R -1 F -1 
+P -1 P -1 M -1 F -1 P -1 P -1 R -1 R -1 R -1 M -1 
+M -1 R -1 M -1 R -1 M -1 M -1 M -1 P -1 M -1 F -1 
+P -1 P -1 P -1 P -1 M -1 F -1 F -1 R -1 P -1 R -1 
+P -1 R -1 F -1 M -1 F -1 R -1 R -1 M -1 P -1 P -1 
+R -1 F -1 P -1 F -1 F -1 M -1 F -1 R -1 F -1 F -1 
+M -1 P -1 M -1 R -1 P -1 P -1 F -1 F -1 R -1 R -1 
+F -1 M -1 F -1 R -1 R -1 M -1 P -1 M -1 M -1 P 1 

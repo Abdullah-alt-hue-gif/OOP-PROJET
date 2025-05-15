@@ -2,15 +2,15 @@
 
 using namespace std;
 
-Economy::Economy(float initialGold) : treasury(initialGold), taxRate(0.15f), inflation(0.02f) {}
+Economy::Economy(float initialGold) : treasury(initialGold), tax_rate(0.15f), inflation(0.02f) {}
 
 void Economy::collectTaxes(const Population& pop, const Peasant& peasants,const Merchant& merchants) { 
     
-    if (taxRate < 0) taxRate = 0;
-    if (taxRate > 0.5f) taxRate = 0.5f;
+    if (tax_rate < 0) tax_rate = 0;
+    if (tax_rate > 0.5f) tax_rate = 0.5f;
 
-    float peasantTax = peasants.getPopulation() * taxRate * 0.5f;  
-    float merchantTax = merchants.getPopulation() * taxRate * 2.0f; 
+    float peasantTax = peasants.getPopulation() * tax_rate * 0.5f;  
+    float merchantTax = merchants.getPopulation() * tax_rate * 2.0f; 
     treasury += peasantTax + merchantTax;
     inflation += 0.005f; 
 }
@@ -30,7 +30,7 @@ void Economy::adjustTreasury(int amount) {
 }
 
 void Economy::adjustTaxRate(float newRate) {
-    taxRate = (newRate < 0) ? 0 : (newRate > 0.5f) ? 0.5f : newRate;
+    tax_rate = (newRate < 0) ? 0 : (newRate > 0.5f) ? 0.5f : newRate;
 }
 
 void Economy::applyInflation() {
@@ -38,8 +38,8 @@ void Economy::applyInflation() {
 }
 
 void Economy::displayEconomy() const {
-    cout << "\n     Economy Status" << endl;
+    cout <<endl<< "===Economy Status===" << endl;
     cout << "Treasury: " << treasury << " gold" << endl;
-    cout << "Tax Rate: " << (taxRate * 100) << "%" << endl;
+    cout << "Tax Rate: " << (tax_rate * 100) << "%" << endl;
     cout << "Inflation: " << (inflation * 100) << "%\n" << endl;
 }

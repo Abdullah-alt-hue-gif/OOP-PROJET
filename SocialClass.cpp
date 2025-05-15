@@ -4,7 +4,7 @@ using namespace std;
 
 SocialClass::SocialClass(string n,int pop)
 {
-	socialTypeName = n;
+	socialName = n;
 	population = pop;
 	happiness = 70.0;
 }
@@ -17,9 +17,9 @@ int SocialClass::getPopulation() const {
 
 void SocialClass::display() const
 {
-	cout << "Type: " << socialTypeName;
-	cout << "\nPopulation: " << population ;
-	cout << "\nHappiness: " << happiness << "%" << endl;
+	cout << "Type: " << socialName;
+	cout << endl<<"Population: " << population ;
+	cout <<endl<< "Happiness: " << happiness << "%" << endl;
 }
 
 Peasant::Peasant(int pop) : SocialClass("Peasant", pop){}

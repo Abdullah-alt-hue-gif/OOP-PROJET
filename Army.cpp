@@ -7,15 +7,15 @@ Army::Army(int rec, int food, int gold)
 	recruit = rec;
 	foodStock = food;
 	salary_fund = gold;
-	trainedSoldiers = 15;
+	trained_soldiers = 15;
 	corruption = 0;
-	morale = 70; 
+	morale = 70;
 }
 
 void Army::recruitt(int newRecruit)
 {
 	recruit += newRecruit;
-	morale -= 2; 
+	morale -= 2;
 	if (morale < 0)
 		morale = 0;
 }
@@ -26,7 +26,7 @@ void Army::train(int days)
 	int newtrained = recruit * days / 20;
 	if (newtrained > recruit)
 		newtrained = recruit;
-	trainedSoldiers += newtrained;
+	trained_soldiers += newtrained;
 	recruit -= newtrained;
 	morale += days / 2;
 	if (morale > 100)
@@ -34,7 +34,7 @@ void Army::train(int days)
 }
 
 void Army::autoFeed(Resources& res) {
-	int requireFood = trainedSoldiers + recruit;
+	int requireFood = trained_soldiers + recruit;
 	if (res.consumeFood(requireFood)) {
 		morale += 5;
 	}
@@ -45,29 +45,29 @@ void Army::autoFeed(Resources& res) {
 }
 
 void Army::manualFeed(Resources& res) {
-	cout << "\n     Army feeding";
-	cout << "\nAvailable food: " << res.getFood();
-	cout << "\nTotal soldiers: " << (trainedSoldiers + recruit);
-	cout << "\nEnter food amount to use: ";
+	cout << endl << "Army feeding:-" << endl;
+	cout << "Available food: " << res.getFood() << endl;
+	cout << "Total soldiers: " << (trained_soldiers + recruit) << endl;
+	cout << "Enter food amount to use: " << endl;
 
 	int foodAmount;
 	cin >> foodAmount;
 
 	if (res.consumeFood(foodAmount)) {
-		int required = trainedSoldiers + recruit;
+		int required = trained_soldiers + recruit;
 		if (foodAmount >= required * 2) {
-			morale += 10;  
+			morale += 10;
 		}
 		else if (foodAmount >= required) {
-			morale += 5;   
+			morale += 5;
 		}
 		else {
-			morale -= 5;   
+			morale -= 5;
 		}
-		cout << "Fed army with " << foodAmount << " food units!\n";
+		cout << "Fed army with " << foodAmount << " food units!" << endl;
 	}
 	else {
-		cout << "Not enough food!\n";
+		cout << "Not enough food!" << endl;
 		morale -= 15;
 	}
 
@@ -77,7 +77,7 @@ void Army::manualFeed(Resources& res) {
 void Army::pay(int gold)
 {
 	salary_fund += gold;
-	int requireFund = trainedSoldiers * 3;
+	int requireFund = trained_soldiers * 3;
 	if (salary_fund > requireFund)
 	{
 		salary_fund -= requireFund;
@@ -101,11 +101,11 @@ void Army::pay(int gold)
 }
 
 int Army::getMorale() const {
-    return morale;
+	return morale;
 }
 
 int Army::getCorruption() const {
-    return corruption;
+	return corruption;
 }
 
 void Army::updateMorale(bool stableLeadership)
@@ -132,15 +132,15 @@ void Army::updateMorale(bool stableLeadership)
 }
 
 int Army::getTrainedSoldiers() const {
-    return trainedSoldiers;
+	return trained_soldiers;
 }
 
 void Army::displayArmy() const {
 	cout << "Recruits: " << recruit << endl;
-	cout << "Trained Soldiers: " << trainedSoldiers << endl;
-	cout << "Total Soldiers: " << (recruit + trainedSoldiers) << "\n";
-	cout << "Morale: " << morale << "%\n";
-	cout << "Corruption: " << corruption << "%\n";
-	cout << "Food Stock: " << foodStock << "\n";
-	cout << "Salary Fund: " << salary_fund << " gold\n";
+	cout << "Trained Soldiers: " << trained_soldiers << endl;
+	cout << "Total Soldiers: " << (recruit + trained_soldiers) << endl;
+	cout << "Morale: " << morale << "%" << endl;
+	cout << "Corruption: " << corruption << "%" << endl;
+	cout << "Food Stock: " << foodStock << endl;
+	cout << "Salary Fund: " << salary_fund << " gold" << endl;
 }
